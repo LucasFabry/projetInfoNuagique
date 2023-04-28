@@ -1,0 +1,32 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<table class="table table-striped">
+ <p class="text-center">{{cours.nomCours}} <br> {{cours.heureCours}} <br>{{classe[0].nomPromo}} </p>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Heure pointage</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% set i = 1 %}
+    {% for coursEtudiant in listeCoursEtudiant %}
+    <tr>
+        <th scope="row">{{ i }}</th>
+        <td>{{ coursEtudiant.etudiant.prenom }}</td>
+        <td> {{ coursEtudiant.etudiant.nom}} </td>
+        <td> {{ coursEtudiant.heurePointage }}</td>
+        {% set i = i + 1 %}
+    </tr>
+    {% endfor %} 
+      
+    
+  </tbody>
+</table>
+
+{% endblock %}

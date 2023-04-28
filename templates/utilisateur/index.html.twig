@@ -1,0 +1,25 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Hello UtilisateurController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    
+    <div class="col">
+    <div class="row">
+        {% for perso in utilisateurs %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ perso.prenom }} {{ perso.nom }} </h5>
+                <p class="card-text">{{perso.password}} {{perso.mail}} {{perso.numEtudiant}}</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

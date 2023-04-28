@@ -1,0 +1,30 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Hello CoursController!{% endblock %}
+
+{% block body %}
+
+   
+    <div class="row">
+    {% for cours in listeCours  %}
+    <div class="col-3"> 
+        
+        <div class="card">
+            <h5 class="card-header text-center">{{cours.nomCours}}</h5>
+            <div class="card-body">
+                <h5 class="card-title text-center"> {{ cours.heureCours }}</h5>
+                {% if app.user.roles[0] == "ROLE_PROF" %}
+                
+                    <a href="{{ path("app_cours_etudiant", {'id': cours.id}) }}" class="btn btn-primary">Voir présence</a>
+
+                {% endif %}
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+    
+    </div>
+{% endblock %}
+
+
+  

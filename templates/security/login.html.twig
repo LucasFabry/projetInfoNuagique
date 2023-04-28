@@ -1,0 +1,48 @@
+{% extends 'base2.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<form method="post" class="form-signin text-center">
+    <img class="mb-4" src="https://scontent.xx.fbcdn.net/v/t1.15752-9/279580355_361703419127542_859513222964484386_n.png?stp=dst-png_p403x403&_nc_cat=107&ccb=1-6&_nc_sid=aee45a&_nc_ohc=jL3hnhU-dYkAX8j-F1n&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVIC3Q95tJLi0gtKxS2YjLDNlOF8ujcu7yLHcSQL0XVBHQ&oe=629B019E" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputNumEtudiant">Num Etudiant</label>
+    <input type="text" value="{{ last_username }}" name="numEtudiant" id="inputNumEtudiant" class="form-control" autocomplete="username" required autofocus>
+    <label for="inputPassword">Password</label>  
+    
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <br>
+        <button type="button" class="btn btn-mb-3">
+             <a href="{{ path('app_logout') }}">Logout</a>
+        </button>
+    {% endif %}
+
+    
+    
+  
+
+    {#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+    #}
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+    
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Sign in
+    </button>
+</form>
+{% endblock %}
+

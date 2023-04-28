@@ -1,0 +1,23 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="col">
+    <div class="row">
+        {% for abs in absences %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ abs.etudiant.prenom }}</h5>
+                <p class="card-text">{{abs.date|date('F jS Y \\a\\t g:ia')}}</p>
+                <a href="{{ path('absence.getById', {'id': abs.etudiant.id}) }}" class="btn btn-primary">Voir absence élève</a>
+            </div>
+        </div>
+        
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}

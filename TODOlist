@@ -1,0 +1,9 @@
+-> Prof à la liste de ses cours        --------------------------------- V
+-> Prof a accès aux absences et aux retard à un cours
+-> Un élève a accès à ses absences     --------------------------------- V
+-> Un élève peut justifier ses absences -------------------------------- V
+-> gérer les accès ----------------------------------------------------- V
+-> pouvoir envoyer des fichiers pour justifier absence
+-> Un admin peut créer des utilisateurs -------------------------------- V
+-> Un administrateur doit voir les absences en attente de validation
+-> Un utilisateur peut voir ses pointages à ses cours

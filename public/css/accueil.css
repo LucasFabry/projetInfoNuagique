@@ -1,0 +1,152 @@
+@import url(//db.onlinewebfonts.com/c/01173b246d9d9ea808ea75a26b3b61bb?family=Circular+Spotify+Tx+T+Black);
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  margin : 0;
+  padding : 0;
+  /*background : linear-gradient(to bottom right, #29b6b6, #a0e096);*/
+  height : 100vh;
+  min-height: -webkit-fill-available;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Poppins';
+  color: red;
+}
+
+.header {
+  overflow: hidden;
+  padding: 20px 10px;
+  font-family: 'Poppins';
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-right: 35px;
+  text-decoration: none;
+  font-size: 21px;
+  line-height: 5px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  text-decoration: none;
+  color: #1824E3;
+}
+
+.header a.active {
+  background-color: #1824E3;
+  color: white;
+}
+
+.header-right {
+  float: right;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+
+.form-group{
+  width : 30%;
+  position: relative;
+  left: 51%;
+  bottom: 4.2%;
+  font-family: 'Poppins';
+}
+
+
+.list-group{
+  width : 30%;
+  position: relative;
+  left : 20%;
+  top : 20%;
+  font-family: 'Poppins';
+  height: 150px;
+  overflow-y: auto;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #5ac7a9;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #014bff;
+  border-radius: 20px;
+}
+
+
+.tab-content{
+  border-radius: 5px;
+  position: relative;
+  width : 60%;
+  left : 10%;
+  top : 50%;
+}
+
+.tab-pane fade{
+  background-color: white;
+  background-size: 200px 300px;
+}
+
+
+a.nav-link {
+    font-family: 'Poppins';
+    color : white;
+}
+
+.navbar-brand{
+  color : white;
+}
+
+.nav-item{
+  margin-left: 45px;
+  color : white;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #ffcc00;
+}
+
+.title{
+  position: relative;
+  top : 30%;
+}
+
+.title p{
+  color : white;
+  font-family: spotify-circular, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 4rem;
+  text-align: center;
+}

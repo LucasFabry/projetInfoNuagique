@@ -1,0 +1,28 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+
+    <div>
+        <img src="https://nikolaspizza.com/wp-content/uploads/2021/05/qr-code-img.png" alt="Qr Code Image" />    
+    </div>
+    <button type="button" class="btn btn-info">Générer QR Code</button>
+    <table class="table">
+    <thead>
+        <tr>
+        <th scope="col">Dernier pointage</th>
+        <th scope="col">Cours</th>
+        <th scope="col">Heure du cours </th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for coursEtu in  coursEtudiants %}
+        <tr>
+        <th scope="row">{{ coursEtu.heurePointage }}</th>
+        <td> {{coursEtu.cours.nomCours}} </td>
+        <td>{{coursEtu.cours.heureCours }} </td>
+        </tr>
+    {% endfor %}
+        
+    </tbody>
+    </table>
+{% endblock %}

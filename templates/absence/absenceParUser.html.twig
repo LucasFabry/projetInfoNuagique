@@ -1,0 +1,47 @@
+{% extends 'base2.html.twig' %}
+
+    {% block body %}
+        <div class="col">
+        <div class="row">
+        {% if app.user.roles[0] == 'ROLE_USER' %}
+            {% for abs in absencesUtilisateur %}
+                <div class="card">
+                <h5 class="card-header">{{abs.etudiant.prenom}} {{ abs.etudiant.nom }}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Absent le {{abs.date|date('d/m/Y')}}</h5>
+                    {% if abs.justification == NULL %}
+                        <p class="card-text">Cette absence doit être justifée</p>
+                        <a href="{{ path("absence.justifier", {'id': abs.id  }) }}" class="btn btn-primary">Justification</a>
+                    {% elseif abs.justification and abs.valide == NULL %}
+                        <p class="card-text">Cette absence est en attente de validation</p>
+                    
+                    {% else %}
+                        <p class="card-text">Cette absence est justifiée</p>
+                    {% endif %}
+                </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% if app.user.roles[0] == 'ROLE_ADMIN' %}
+            {% for abs in absencesUtilisateur %}
+                <div class="card">
+                <h5 class="card-header">{{abs.etudiant.prenom}} {{ abs.etudiant.nom }}</h5>
+                <div class="card-body">
+                    <h5 class="card-title">Absent le {{abs.date|date('d/m/Y')}}</h5>
+                    {% if abs.justification and abs.valide == NULL %}
+                        <p class="card-text">{{ abs.justification }} </p>
+                        <a href="{{ path("absence.valider", {'id': abs.id }) }}" class="btn btn-primary">Valider justification</a>
+                    {% elseif abs.justification == NULL %}
+                        <p class="card-text">Cette absence n'est pas justifiée</p>
+                    {% else %}
+                        <p class="card-text">Cette absence est justifiée et validée</p>
+                    {% endif %}
+                </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+        </div>
+        </div>
+    {% endblock %}
+
+   
